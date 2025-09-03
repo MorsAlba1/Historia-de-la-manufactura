@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolución de la Manufactura | Historia Completa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos para que la página sea funcional */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        
+        /* Estilos del header */
+        #header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        
+        .logo i {
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Estilos de la navegación */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li a {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav li a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 2px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding-top: 80px;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        /* Intro section */
+        .intro {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+        
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro-text {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Timeline section */
+        .timeline-section {
+            padding: 5rem 0;
+            background: #fff;
+        }
+        
+        .timeline-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+        
+        .timeline-nav-btn {
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .timeline-nav-btn:hover {
+            background: #2980b9;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #3498db;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid #3498db;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .timeline-img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Slider section */
+        .slider-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+        
+        .slider-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            padding: 2rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .slide-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .slider-dot.active {
+            background: #3498db;
+        }
+        
+        /* Gallery section */
+        .gallery-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .gallery-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .gallery-dot.active {
+            background: #3498db;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #3498db;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                transition: 0.3s;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 2rem;
+            }
+            
+            nav li {
+                margin-bottom: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .timeline-item:nth-child(odd)::after {
+                right: auto;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-industry"></i>
+                <span>Historia de la Manufactura</span>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#timeline">Línea de Tiempo</a></li>
+                    <li><a href="#importancia">Hitos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Evolución de la Manufactura</h1>
+            <p>Desde las civilizaciones antiguas hasta la Industria 4.0, un viaje a través del tiempo y la innovación</p>
+            <a href="#timeline" class="btn">Explorar la Historia</a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro" id="introduccion">
+        <div class="container">
+            <h2 class="section-title">La Importancia de la Manufactura</h2>
+            <div class="intro-content">
+                <p class="intro-text">La manufactura ha sido el pilar fundamental del progreso humano desde los albores de la civilización. Lo que inició como técnicas artesanales rudimentarias se ha transformado en sistemas de producción sofisticados que impulsan la economía global y definen nuestra era moderna.</p>
+                <p class="intro-text">Esta evolución no solo refleja avances tecnológicos revolucionarios, sino también transformaciones profundas en la estructura social, económica y política de las sociedades. En esta exploración detallada, descubriremos los hitos clave que han moldeado la manufactura, desde los antiguos talleres de Sumeria hasta las fábricas inteligentes de la era digital, analizando su impacto duradero en la humanidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <h2 class="section-title">Línea de Tiempo de la Manufactura</h2>
+        
+        <div class="timeline-nav">
+            <button class="timeline-nav-btn" onclick="scrollToTimelineItem(0)">Inicio</button>
+            <button class="timeline-nav-btn" onclick="scrollToTimelineItem(6)">Revolución Industrial</button>
+            <button class="timeline-nav-btn" onclick="scrollToTimelineItem(13)">Era Moderna</button>
+        </div>
+        
+        <div class="timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">1</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">~3000 a.C.</span>
+                    <h3 class="timeline-title">Sumeria y Egipto</h3>
+                    <img class="timeline-img" src="https://plus.unsplash.com/premium_photo-1694475184975-0e29231a27ef?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">Las civilizaciones mesopotámicas y egipcias desarrollaron los primeros sistemas organizados de producción. En Sumeria, los sacerdotes llevaban meticulosos registros de inventarios en tablillas de arcilla, mientras que en Egipto se implementaron sistemas complejos de control de recursos para las grandes construcciones piramidales. Estos sistemas representan los primeros intentos de planificación y control de la producción a gran escala, involucrando miles de trabajadores y recursos masivos.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">2</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">~2000-500 a.C.</span>
+                    <h3 class="timeline-title">China y Grecia Antigua</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1641918313747-6ea3b8f5c2c1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">Tanto China como Grecia implementaron sistemas avanzados de planeación y especialización en la producción de armas, cerámica y otros bienes esenciales. En China, durante la dinastía Zhou, se establecieron talleres especializados controlados por el estado. En Grecia, la producción de cerámica alcanzó niveles industriales con una clara división del trabajo y técnicas estandarizadas que permitían la producción en serie de vasijas y ánforas, exportadas por todo el Mediterráneo.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">3</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Edad Antigua y Media</span>
+                    <h3 class="timeline-title">Hasta el siglo XV</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1635058157308-e41b28950e55?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">Durante este extenso período, la producción se caracterizó por sistemas básicos de subsistencia, esclavitud y feudalismo. La Edad Media vio el auge de los gremios artesanales, donde maestros artesanos enseñaban a aprendices en talleres pequeños. La producción era manual, con énfasis en la calidad y las habilidades individuales, pero con volúmenes limitados. Los gremios controlaban estrictamente los métodos de producción, precios y transferencia de conocimientos, protegiendo sus monopolios.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">4</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Siglo XVI</span>
+                    <h3 class="timeline-title">Mercantilismo</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1745239188404-4c64022679c8?q=80&w=954&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">El mercantilismo surgió como sistema económico que priorizaba la acumulación de metales preciosos mediante el comercio internacional. Esto impulsó la producción de bienes para la exportación y sentó las bases para la transición del feudalismo al capitalismo. Los estados-nación emergentes comenzaron a establecer políticas para proteger y fomentar sus industrias manufactureras, creando las primeras formas de proteccionismo económico y colonias para suministrar materias primas.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 5 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">5</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Siglo XVII</span>
+                    <h3 class="timeline-title">Introducción de tinta y papel</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1719563014708-85b38508ee52?q=80&w=865&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">La generalización del uso de papel y tinta revolucionó los sistemas de registro y contabilidad. Esto permitió llevar registros más detallados de operaciones, costos e inventarios, sentando las bases para una gestión más científica de la producción. Aunque los métodos de producción seguían siendo predominantemente artesanales, estas innovaciones en administración permitieron un control más preciso de los recursos y los procesos, facilitando el comercio a mayor escala.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 6 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">6</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Siglo XVIII (1760s-1780s)</span>
+                    <h3 class="timeline-title">Revolución Industrial y máquina de vapor</h3>
+                    <img class="timeline-img" src="https://plus.unsplash.com/premium_photo-1664391627111-1e54a9ab358e?q=80&w=847&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">La invención de la máquina de vapor por James Watt marcó el inicio de la Revolución Industrial, transformando la producción artesanal en producción fabril con mecanización y división del trabajo. Este período vio el surgimiento de las fábricas, que centralizaron la producción y permitieron economías de escala nunca antes vistas. La energía del vapor reemplazó la fuerza humana y animal, multiplicando la capacidad productiva y alterando la estructura social.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 7 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">7</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">1791</span>
+                    <h3 class="timeline-title">Protestas obreras en EE.UU.</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1543364915-aae47b92ef36?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">Los trabajadores de Filadelfia organizaron una de las primeras huelgas documentadas en Estados Unidos, protestando por las extenuantes jornadas de trabajo de hasta 18 horas diarias. Estas protestas llevaron a la demanda de una jornada de 10 horas, marcando el inicio del movimiento obrero organizado y sentando las bases para futuras reivindicaciones laborales en el ámbito manufacturero, incluyendo seguridad y salarios justos.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 8 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">8</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Siglo XIX</span>
+                    <h3 class="timeline-title">Revolución industrial, teóricos como Smith y Marx</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1612780732269-8bff5f08fcf3?q=80&w=755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">La Revolución Industrial se consolidó avec la producción masiva y estructuras organizativas piramidales. Adam Smith defendió la mínima intervención estatal y la especialización laboral, mientras Karl Marx criticó el sistema capitalista como explotador y propuso el socialismo como alternativa. Este siglo vio la consolidación del capitalismo industrial y el surgimiento de movimientos sociales que cuestionaban sus efectos sobre los trabajadores y la sociedad.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 9 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">9</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Principios del siglo XX</span>
+                    <h3 class="timeline-title">Taylorismo</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <p class="timeline-desc">Frederick Taylor introdujo la "gestión científica", buscando optimizar cada tarea mediante su descomposición en movimientos elementales y la medición de tiempos. Su enfoque pretendía maximizar la eficiencia eliminando movimientos innecesarios y estandarizando los procesos. Aunque aumentó la productividad, el taylorismo fue criticado por deshumanizar el trabajo y reducir a los trabajadores a meros ejecutores de tareas repetitivas, ignorando aspectos psicológicos.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 10 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">10</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">1913</span>
+                    <h3 class="timeline-title">Línea de ensamblaje de Ford</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1581102330765-e5f24cf532d2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">Henry Ford revolucionó la manufactura con la implementación de la línea de ensamblaje móvil para la producción del Modelo T. Este sistema redujo el tiempo de ensamblaje de 12 horas a apenas 93 minutos, permitiendo la producción en masa a costos significativamente menores. El fordismo combinó producción en masa con consumo en masa, al pagar salarios que permitían a los trabajadores adquirir los productos que fabricaban, transformando la sociedad de consumo.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 11 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">11</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Siglo XIX a 1950</span>
+                    <h3 class="timeline-title">Era industrial clásica</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Fábrica de la era industrial clásica">
+                    <p class="timeline-desc">Este período se caracterizó por el enfoque en el trabajador como recurso, con luchas por derechos laborales como la jornada de 8 horas. Se implementaron métodos burocráticos de gestión y se desarrollaron técnicas básicas de optimización que evolucionaron hacia análisis de datos más sofisticados. La producción en masa se consolidó como paradigma dominante, con énfasis en la estandarización, el control de calidad y la expansión global.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 12 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">12</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Post-Segunda Guerra Mundial (años 1950s)</span>
+                    <h3 class="timeline-title">Sistema Toyota</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1748621019980-8c9278b61974?q=80&w=431&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <p class="timeline-desc">Taiichi Ohno desarrolló el Sistema de Producción Toyota, originando el lean manufacturing con énfasis en eliminar desperdicios (muda), justo a tiempo (jit) y mejora continua (kaizen). Este sistema priorizaba la flexibilidad y la calidad sobre la producción en masa, permitiendo a Toyota respond rápidamente a las demandas del mercado con variedad de modelos y customización, revolucionando la industria automotriz global.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 13 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">13</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">1950-1990</span>
+                    <h3 class="timeline-title">Era neoclásica</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Computadoras en oficina de 1950-1990">
+                    <p class="timeline-desc">Este período se caracterizó por la creciente competencia global y enfoques humanistas influenciados por la psicología organizacional. Se valoró el bienestar laboral y surgieron conceptos como enriquecimiento de puestos y trabajo en equipo. Tecnológicamente, se adoptaron máquinas para registros (1960-1970) y computadoras para gestión de diseño, compras e inventarios, sentando las bases para la automatización digital y la informática en la manufactura.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 14 -->
+            <div class="timeline-item fade-in">
+                <div class="timeline-circle">14</div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Desde 1990</span>
+                    <h3 class="timeline-title">Era del conocimiento, Industria 4.0</h3>
+                    <img class="timeline-img" src="https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Fábrica inteligente de Industria 4.0">
+                    <p class="timeline-desc">La manufactura entró en la era digital con el predominio del trabajo mental, el sector servicios y la gestión del talento para la innovación. La Industria 4.0 integra IA, IoT, robótica avanzada y big data para crear fábricas inteligentes con producción flexible y sostenible. Modelos como manufactura ágil (adaptable a mercados) y de clase mundial (flexibilidad global) definen esta era de hiperconectividad, personalización masiva y sostenibilidad ambiental.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <section class="slider-section" id="importancia">
+        <h2 class="section-title">Hitos Fundamentales de la Manufactura</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img class="slide-img" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Revolución Industrial">
+                    <h3>Revolución Industrial</h3>
+                    <p>La mecanización cambió para siempre los procesos de producción, introduciendo las fábricas y la producción en masa. La invención de la máquina de vapor por James Watt en la década de 1770 permitió la centralización de la producción en fábricas, marcando el final de la producción artesanal y el comienzo de la producción mecanizada a gran escala, transformando economías enteras.</p>
+                </div>
+                <div class="slide">
+                    <img class="slide-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Taylorismo">
+                    <h3>Taylorismo y Gestión Científica</h3>
+                    <p>Frederick Taylor introduce la gestión científica para optimizar tareas y mejorar la eficiencia en las fábricas. A principios del siglo XX, Taylor propuso descomponer cada trabajo en sus componentes más simples, cronometrarlos y reorganizarlos en la secuencia más eficiente. Este enfoque aumentó dramáticamente la productividad pero también generó críticas por deshumanizar el trabajo.</p>
+                </div>
+                <div class="slide">
+                    <img class="slide-img" src="https://images.unsplash.com/photo-1531986627054-7f294d095acd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <h3>Línea de Ensamblaje de Ford</h3>
+                    <p>Henry Ford revoluciona la producción con la línea de ensamblaje, permitiendo la producción en masa estandarizada. En 1913, Ford implementó la primera línea de ensamblaje móvil para la producción del Modelo T, reduciendo el tiempo de ensamblaje de 12 horas a apenas 93 minutos. Este avance no solo transformó la industria automotriz sino toda la manufactura moderna, estableciendo nuevos estándares de eficiencia y productividad que serían emulados en diversas industrias en las décadas siguientes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="galeria">
+        <h2 class="section-title">Galería de la Evolución Manufacturera</h2>
+        <div class="gallery-container">
+            <div class="gallery-slider">
+                <div class="gallery-slide">
+                    <img class="gallery-img" src="https://images.unsplash.com/photo-1651525670033-279c26cc2347?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                </div>
+                <div class="gallery-slide">
+                    <img class="gallery-img" src="https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Fábrica moderna">
+                </div>
+                <div class="gallery-slide">
+                    <img class="gallery-img" src="https://images.unsplash.com/photo-1717386255773-a456c611dc4e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                </div>
+            </div>
+        </div>
+        <div class="gallery-nav">
+            <div class="gallery-dot active"></div>
+            <div class="gallery-dot"></div>
+            <div class="gallery-dot"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Trabajo Creado por Ricardo OM, Zuriel OZ y giovani CM para la materia de Administracion De La Produccion  </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#introduccion">Introducción</a></li>
+                        <li><a href="#timeline">Línea de Tiempo</a></li>
+                        <li><a href="#importancia">Hitos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        
+        </div>
+    </footer>
+
+    <script>
+        // Slider functionality for hitos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sliders
+            initSliders();
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 100);
+            });
+            
+            // Fade-in animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+            function checkFade() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 150 && rect.bottom > 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkFade);
+            window.addEventListener('resize', checkFade);
+            window.addEventListener('load', checkFade);
+            checkFade();
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', e => {
+                    e.preventDefault();
+                    const targetId = anchor.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        nav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        const headerHeight = header.offsetHeight;
+                        const position = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({ top: position, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Mobile menu
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.getElementById('nav');
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                document.body.classList.toggle('no-scroll', nav.classList.contains('active'));
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('active') && 
+                    !nav.contains(e.target) && 
+                    !menuToggle.contains(e.target)) {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+
+            // Touch events for sliders on mobile devices
+            initTouchEvents();
+        });
+
+        // Timeline navigation function
+        function scrollToTimelineItem(index) {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            if (timelineItems[index]) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const position = timelineItems[index].getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({ top: position, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize all sliders
+        function initSliders() {
+            // Hitos slider
+            const slider = document.querySelector('.slider');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            function showSlide(index) {
+                slider.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    resetSlideInterval();
+                });
+            });
+            
+            function startSlideInterval() {
+                slideInterval = setInterval(() => {
+                    showSlide((currentSlide + 1) % dots.length);
+                }, 5000);
+            }
+            
+            function resetSlideInterval() {
+                clearInterval(slideInterval);
+                startSlideInterval();
+            }
+            
+            startSlideInterval();
+            
+            // Gallery slider
+            const gallerySlider = document.querySelector('.gallery-slider');
+            const galleryDots = document.querySelectorAll('.gallery-dot');
+            let currentGallerySlide = 0;
+            let galleryInterval;
+            
+            function showGallerySlide(index) {
+                gallerySlider.style.transform = `translateX(-${index * 100}%)`;
+                galleryDots.forEach(dot => dot.classList.remove('active'));
+                galleryDots[index].classList.add('active');
+                currentGallerySlide = index;
+            }
+            
+            galleryDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showGallerySlide(index);
+                    resetGalleryInterval();
+                });
+            });
+            
+            function startGalleryInterval() {
+                galleryInterval = setInterval(() => {
+                    showGallerySlide((currentGallerySlide + 1) % galleryDots.length);
+                }, 4000);
+            }
+            
+            function resetGalleryInterval() {
+                clearInterval(galleryInterval);
+                startGalleryInterval();
+            }
+            
+            startGalleryInterval();
+        }
+
+        // Initialize touch events for mobile devices
+        function initTouchEvents() {
+            // Touch events for hitos slider
+            const sliderContainer = document.querySelector('.slider-container');
+            let startX, moveX, currentTranslate = 0;
+            let isDragging = false;
+            
+            if (sliderContainer) {
+                sliderContainer.addEventListener('touchstart', touchStart);
+                sliderContainer.addEventListener('touchmove', touchMove);
+                sliderContainer.addEventListener('touchend', touchEnd);
+                
+                // Also add mouse events for desktop with touch capability
+                sliderContainer.addEventListener('mousedown', touchStart);
+                sliderContainer.addEventListener('mousemove', touchMove);
+                sliderContainer.addEventListener('mouseup', touchEnd);
+                sliderContainer.addEventListener('mouseleave', touchEnd);
+            }
+            
+            function touchStart(e) {
+                if (e.type === 'mousedown') {
+                    e.preventDefault();
+                }
+                isDragging = true;
+                startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                sliderContainer.style.cursor = 'grabbing';
+                clearAllIntervals();
+            }
+            
+            function touchMove(e) {
+                if (!isDragging) return;
+                const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                moveX = currentX - startX;
+            }
+            
+            function touchEnd() {
+                isDragging = false;
+                sliderContainer.style.cursor = 'grab';
+                
+                if (moveX < -50) {
+                    // Swipe left - next slide
+                    const slides = document.querySelectorAll('.slide');
+                    const currentIndex = parseInt(getComputedStyle(slider).transform.split(',')[4] / -100);
+                    showSlide((currentIndex + 1) % slides.length);
+                } else if (moveX > 50) {
+                    // Swipe right - previous slide
+                    const slides = document.querySelectorAll('.slide');
+                    const currentIndex = parseInt(getComputedStyle(slider).transform.split(',')[4] / -100);
+                    showSlide((currentIndex - 1 + slides.length) % slides.length);
+                }
+                
+                startX = 0;
+                moveX = 0;
+                resetAllIntervals();
+            }
+            
+            // Touch events for gallery slider
+            const galleryContainer = document.querySelector('.gallery-container');
+            let galleryStartX, galleryMoveX;
+            let isGalleryDragging = false;
+            
+            if (galleryContainer) {
+                galleryContainer.addEventListener('touchstart', galleryTouchStart);
+                galleryContainer.addEventListener('touchmove', galleryTouchMove);
+                galleryContainer.addEventListener('touchend', galleryTouchEnd);
+                
+                // Also add mouse events for desktop with touch capability
+                galleryContainer.addEventListener('mousedown', galleryTouchStart);
+                galleryContainer.addEventListener('mousemove', galleryTouchMove);
+                galleryContainer.addEventListener('mouseup', galleryTouchEnd);
+                galleryContainer.addEventListener('mouseleave', galleryTouchEnd);
+            }
+            
+            function galleryTouchStart(e) {
+                if (e.type === 'mousedown') {
+                    e.preventDefault();
+                }
+                isGalleryDragging = true;
+                galleryStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                galleryContainer.style.cursor = 'grabbing';
+                clearAllIntervals();
+            }
+            
+            function galleryTouchMove(e) {
+                if (!isGalleryDragging) return;
+                const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                galleryMoveX = currentX - galleryStartX;
+            }
+            
+            function galleryTouchEnd() {
+                isGalleryDragging = false;
+                galleryContainer.style.cursor = 'grab';
+                
+                if (galleryMoveX < -50) {
+                    // Swipe left - next slide
+                    const slides = document.querySelectorAll('.gallery-slide');
+                    const currentIndex = parseInt(getComputedStyle(gallerySlider).transform.split(',')[4] / -100);
+                    showGallerySlide((currentIndex + 1) % slides.length);
+                } else if (galleryMoveX > 50) {
+                    // Swipe right - previous slide
+                    const slides = document.querySelectorAll('.gallery-slide');
+                    const currentIndex = parseInt(getComputedStyle(gallerySlider).transform.split(',')[4] / -100);
+                    showGallerySlide((currentIndex - 1 + slides.length) % slides.length);
+                }
+                
+                galleryStartX = 0;
+                galleryMoveX = 0;
+                resetAllIntervals();
+            }
+        }
+
+        // Clear all intervals
+        function clearAllIntervals() {
+            const intervalId = window.setInterval(function(){}, 1000);
+            while (intervalId >= 0) {
+                window.clearInterval(intervalId);
+                intervalId--;
+            }
+        }
+
+        // Reset all intervals
+        function resetAllIntervals() {
+            // This would need to be implemented based on your specific interval setup
+            // For simplicity, we'll just reload the page intervals
+            setTimeout(() => {
+                initSliders();
+            }, 3000);
+        }
+
+        // Prevent zoom on double tap (iOS specific)
+        let lastTap = 0;
+        document.addEventListener('touchend', function(e) {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTap;
+            if (tapLength < 300 && tapLength > 0) {
+                e.preventDefault();
+            }
+            lastTap = currentTime;
+        }, false);
+
+        // Handle device orientation changes
+        window.addEventListener('orientationchange', function() {
+            // Timeout needed to allow the orientation to change
+            setTimeout(function() {
+                // Refresh the fade-in elements check
+                const fadeElements = document.querySelectorAll('.fade-in');
+                function checkFade() {
+                    fadeElements.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight - 150 && rect.bottom > 0) {
+                            el.classList.add('visible');
+                        }
+                    });
+                }
+                checkFade();
+            }, 200);
+        });
+
+        // Optimize for low-performance devices
+        if ('connection' in navigator && navigator.connection.saveData === true) {
+            // Reduce animation complexity for users with save-data enabled
+            document.documentElement.classList.add('save-data');
+        }
+
+        // Handle reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('reduced-motion');
+        }
+    </script>
+</body>
+</html>
